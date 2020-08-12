@@ -46,3 +46,4 @@ README
 ――――――――――――――――――――――――――――――――――――――
 Model
 Diary
+/title, content, score, Genre,
