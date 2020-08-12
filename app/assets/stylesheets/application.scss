@@ -1,2 +1,15 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.header{
+    height:60px;
+  background:#00DAFC;
+  color:#fff;
+  width:100%;
+}
+
+.logo{
+  margin:0;
+  line-height:50px;
+  float:left;
+}
