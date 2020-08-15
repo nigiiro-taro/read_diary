@@ -2,36 +2,36 @@
   <% if diary.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(diary.errors.count, "error") %> prohibited this diary from being saved:</h2>
-
       <ul>
-      <% diary.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% diary.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
+  
+  <div class="form-group">  
+    <%= form.label :title ,class:"text-info form-label h3"%>
+    <%= form.text_field :title, id: :diary_title, class:"form-control mb-2", rows:"15", placeholder:"タイトルを入力してください"%>
+   </div>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :diary_title %>
+  <div class="form-group">
+    <%= form.label :content ,class:"text-info form-label h3"%>
+    <%= form.text_area :content, id: :diary_content,class:"form-control mb-2", rows:"5", placeholder:"内容を入力してください" %>
   </div>
 
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content, id: :diary_content %>
+  <div class="form-group">
+    <%= form.label :genre,class:"text-info form-label h3" %>
+    <%= form.select :genre ,{'文学・評論': '文学・評論' , 'ビジネス・経済': 'ビジネス・経済', '教育・自己啓発': '教育・自己啓発', 'サイエンス・テクノロジー': 'サイエンス・テクノロジー', "漫画": "漫画", "その他": "その他"},{},{class:"custom-select form-control"}%>
   </div>
 
-  <div class="field">
-    <%= form.label :genre %>
-    <%= form.text_field :genre, id: :diary_genre %>
-  </div>
+  <div class="form-group">
+    <%= form.label :score,class:"text-info form-label h3" %>
+    <%= form.text_field :score, id: :diary_score, class:"form-control mb-2" %>
+</div>
 
-  <div class="field">
-    <%= form.label :score %>
-    <%= form.text_field :score, id: :diary_score %>
-  </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+<div class="form-group text-center">
+    <%= form.submit "Post!", class:"btn btn-info ws-50"%>
+</div>
 <% end %>
